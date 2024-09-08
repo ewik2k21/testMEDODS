@@ -1,8 +1,12 @@
 package service
 
-import "testMEDODS/pkg/repository"
+import (
+	testmedods "testMEDODS"
+	"testMEDODS/pkg/repository"
+)
 
 type Authorization interface {
+	CreateUser(user testmedods.User) (int, error)
 }
 
 type Service struct {
@@ -10,5 +14,7 @@ type Service struct {
 }
 
 func NewService(rep *repository.Repository) *Service {
-	return &Service{}
+	return &Service{
+		Authorization: NewAuthService(rep.Authorization),
+	}
 }

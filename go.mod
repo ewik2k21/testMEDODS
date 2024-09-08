@@ -7,7 +7,10 @@ require (
 	github.com/spf13/viper v1.19.0
 )
 
-require github.com/joho/godotenv v1.5.1 // indirect
+require (
+	github.com/joho/godotenv v1.5.1 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
+)
 
 require (
 	github.com/bytedance/sonic v1.12.2 // indirect
