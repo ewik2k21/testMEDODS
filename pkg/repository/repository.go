@@ -8,6 +8,8 @@ import (
 
 type Authorization interface {
 	CreateUser(user testmedods.User) (int, error)
+	GetUser(email, password string) (testmedods.User, error)
+	SetSession(userId int, session testmedods.Session) error
 }
 
 type Repository struct {
